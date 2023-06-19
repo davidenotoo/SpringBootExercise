@@ -23,6 +23,9 @@ public class MealDescriptionControllerEsercizio_3 {
 
     @GetMapping(value = "/meal/description-match/{phrase}")
     public List<Meal> getDescriptionMatch(@PathVariable String phrase) {
+        // penso sia un esercizio tipo "ctrl+F" quindi se la parola
+        // che inseriamo è contenuta nella descrizione di un pasto
+        // allora il pasto viene aggiunto alla lista.
         return mealControllerEsercizio1.listaPasti().stream()
                 .filter(meal -> meal.getDescrizione().contains(phrase))
                 .collect(Collectors.toList());
